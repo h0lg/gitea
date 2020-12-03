@@ -24,12 +24,26 @@ embedded assets. This can be different for older releases.
 
 ## Download
 
-Choose the file matching the destination platform from the [downloads page](https://dl.gitea.io/gitea/), copy the URL and replace the URL within the commands below:
+Choose the binary for your destination platform from the [downloads page](https://dl.gitea.io/gitea/).
+
+On **Unix**, copy the link URL and download it like in the following example for *linux-amd64*:
 
 ```sh
 wget -O gitea https://dl.gitea.io/gitea/{{< version >}}/gitea-{{< version >}}-linux-amd64
 chmod +x gitea
 ```
+
+This will also rename the binary into *gitea* and make it executable.
+
+On **Windows**, download the binary, move to where you want to execute it from, and rename it to *gitea.exe*.
+
+When renaming the downloaded binary using **Windows Explorer**,
+make sure you have *View > Show/Hide > File name extensions* checked
+so you don't accidentally duplicate the file extension (*gitea.exe.exe* instead of *gitea.exe*).
+Failing to do so might still allow you to start the
+[Windows service]({{< relref "doc/installation/windows-service.en-us.md" >}})
+and access the [web server]({{< relref "doc/usage/command-line.en-us.md" >}}#web),
+but internal calls to the gitea binary will fail - which may be hard to debug.
 
 ## Verify GPG signature
 Gitea signs all binaries with a [GPG key](https://keys.openpgp.org/search?q=teabot%40gitea.io) to prevent against unwanted modification of binaries. To validate the binary, download the signature file which ends in `.asc` for the binary you downloaded and use the gpg command line tool.
