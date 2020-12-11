@@ -18,6 +18,10 @@ The installation of Hugo is out of the scope of this document, so please take
 the [official install instructions](https://gohugo.io/overview/installing/) to
 get Hugo up and running.
 
+Alternatively, you can install it via package manager
+  - with [scoop](https://scoop.sh/) running `scoop install hugo`
+  - with [Chocolatey](https://chocolatey.org/packages/make) running `choco install hugo`
+
 ## Development
 
 To generate the website and serve it on [localhost:1313](http://localhost:1313)
