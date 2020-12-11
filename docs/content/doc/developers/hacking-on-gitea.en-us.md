@@ -64,14 +64,20 @@ sudo yum install make
 
 ### On Windows
 
-One of these three distributions of Make will run on Windows:
+You may look for any existing `mingw32-make.exe` or `make.exe` in your file system. If it's part of a MinGW distribution, you can probably use it.
 
-- [Single binary build](http://www.equation.com/servlet/equation.cmd?fa=make). Copy somewhere and add to `PATH`.
-  - [32-bits version](ftp://ftp.equation.com/make/32/make.exe)
-  - [64-bits version](ftp://ftp.equation.com/make/64/make.exe)
-- [MinGW](http://www.mingw.org/) includes a build.
-  - The binary is called `mingw32-make.exe` instead of `make.exe`. Add the `bin` folder to `PATH`.
-- [Chocolatey package](https://chocolatey.org/packages/make). Run `choco install make`
+If you don't find it, you can install it
+- from binary using
+  - a [single-binary build](http://www.equation.com/servlet/equation.cmd?fa=make)
+    for [32bit](ftp://ftp.equation.com/make/32/make.exe)
+    or [64bit](ftp://ftp.equation.com/make/64/make.exe)
+  - installers for [MinGW](http://www.mingw.org/), [MinGW-w64](http://mingw-w64.org/) or [tdm-gcc](https://jmeubank.github.io/tdm-gcc/).
+    - The binary is called `mingw32-make.exe` instead of `make.exe`, but if you want to use `make` instead of `mingw32-make` from the shell, you may simply copy it to the same location and name your copy `make.exe`.
+- via package manager
+  - with [Chocolatey](https://chocolatey.org/packages/make) running `choco install make`
+
+Make sure
+  - the containing `bin` folder is added to your `$PATH`.
 
 ## Downloading and cloning the Gitea source code
 
