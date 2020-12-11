@@ -286,17 +286,9 @@ appropriate.
 
 ## Documentation for the website
 
-Documentation for the website is found in `docs/`. If you change this you
-can test your changes to ensure that they pass continuous integration using:
-
-```bash
-# from the docs directory within Gitea
-make trans-copy clean build
-```
-
-You will require a copy of [Hugo](https://gohugo.io/) to run this task. Please
-note: this may generate a number of untracked git objects, which will need to
-be cleaned up.
+The source of the [documentation](https://docs.gitea.io/) is maintained in the
+[`docs/` folder of the Gitea repo](https://github.com/go-gitea/gitea/tree/master/docs) and you should refer to the
+[related ReadMe](https://github.com/go-gitea/gitea/blob/master/docs/README.md) if you want to contribute.
 
 ## Visual Studio Code
 

@@ -30,6 +30,18 @@ make server
 When you are done with your changes just create a pull request, after merging
 the pull request the website will be updated automatically.
 
+## Testing
+
+You can test your changes to ensure that they pass continuous integration using:
+
+```bash
+# from the gitea/docs directory
+make trans-copy clean build
+```
+
+Please note that this may generate a number of untracked git objects, which will need to
+be cleaned up.
+
 ## Contributing
 
 Fork -> Patch -> Push -> Pull Request
