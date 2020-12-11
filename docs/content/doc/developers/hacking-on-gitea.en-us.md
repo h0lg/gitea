@@ -21,12 +21,15 @@ menu:
 
 ## Installing go
 
-You should [install go](https://golang.org/doc/install) and set up your go
-environment correctly.
+You should install **go** and set up your go environment correctly.
+- from [binary](https://golang.org/doc/install)
+- on Windows with [scoop](https://scoop.sh/), run `scoop install go`
 
-Next, [install Node.js with npm](https://nodejs.org/en/download/) which is
+Next, install **Node.js with npm** which is
 required to build the JavaScript and CSS files. The minimum supported Node.js
 version is {{< min-node-version >}} and the latest LTS version is recommended.
+- from [binary](https://nodejs.org/en/download/)
+- on Windows with [scoop](https://scoop.sh/), run `scoop install nodejs`
 
 **Note**: When executing make tasks that require external tools, like
 `make misspell-check`, Gitea will automatically download and build these as
