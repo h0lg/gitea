@@ -284,7 +284,7 @@ Migration from several recent versions of Gitea will also be tested.
 Please submit your PR with additional tests and integration tests as
 appropriate.
 
-## Documentation for the website
+## Documentation
 
 The source of the [documentation](https://docs.gitea.io/) is maintained in the
 [`docs/` folder of the Gitea repo](https://github.com/go-gitea/gitea/tree/master/docs) and you should refer to the
