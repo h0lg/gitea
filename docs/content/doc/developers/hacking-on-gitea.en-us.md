@@ -73,7 +73,9 @@ If you don't find it, you can install it
     or [64bit](ftp://ftp.equation.com/make/64/make.exe)
   - installers for [MinGW](http://www.mingw.org/), [MinGW-w64](http://mingw-w64.org/) or [tdm-gcc](https://jmeubank.github.io/tdm-gcc/).
     - The binary is called `mingw32-make.exe` instead of `make.exe`, but if you want to use `make` instead of `mingw32-make` from the shell, you may simply copy it to the same location and name your copy `make.exe`.
+    - These distributions also contain the GCC, which is required for including sqlite in the build.
 - via package manager
+  - with [scoop](https://scoop.sh/) running `scoop install make` or - if you want to build including sqlite - `scoop install gcc`, which contains a copy of `make`
   - with [Chocolatey](https://chocolatey.org/packages/make) running `choco install make`
 
 Make sure
@@ -130,6 +132,21 @@ TAGS="bindata sqlite sqlite_unlock_notify" make build
 The `build` target will execute both `frontend` and `backend` sub-targets. If the `bindata` tag is present, the frontend files will be compiled into the binary. It is recommended to leave out the tag when doing frontend development so that changes will be reflected.
 
 See `make help` for all available `make` targets. Also see [`.drone.yml`](https://github.com/go-gitea/gitea/blob/master/.drone.yml) to see how our continuous integration works.
+
+### Building with sqlite on Windows
+
+Building and debugging with sqlite on Windows may require installing the [GNU Compiler Collection GCC](https://gcc.gnu.org/) - depending on your Unix subsystem. The custom MinGW-w64 distributed with the widely-used [Git for Windows](https://gitforwindows.org/) for example does *not* contain it.
+Any other existing MinGW or MinGW-w64 distro will probably contain a `gcc.exe` though. If you find one, add its containing `bin` folder to your `$PATH`.
+
+If you don't find an existing `gcc.exe` on your system, you can install it
+
+- from binary
+  - [MinGW](http://www.mingw.org/)
+  - [MinGW-w64](http://mingw-w64.org/)
+  - [tdm-gcc](https://jmeubank.github.io/tdm-gcc/) which installs a slim MinGW-w64 distribution, often with a more recent release of the GCC than MinGW-w64
+- via package manager
+  - with [scoop](https://scoop.sh/) running `scoop install gcc`
+  - with [MSYS2](https://www.msys2.org/) running `pacman -S mingw-w64-i686-toolchain` for 32bit or `pacman -S mingw-w64-x86_64-toolchain` for 64bit
 
 ## Building continuously
 
