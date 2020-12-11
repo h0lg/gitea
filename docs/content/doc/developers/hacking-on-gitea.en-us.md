@@ -78,6 +78,7 @@ If you don't find it, you can install it
 
 Make sure
   - the containing `bin` folder is added to your `$PATH`.
+  - to **run `make` from *sh* or *bash***, not *cmd* or *PowerShell*!
 
 ## Downloading and cloning the Gitea source code
 
